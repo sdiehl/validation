@@ -1,0 +1,11 @@
+.stack-work/
+*.sw[pon]
+*.prof
+*.prof.html
+validation.cabal
+*~
+*.hi
+*.o
+.ghc.environment.*
+dist*/
+TAGS

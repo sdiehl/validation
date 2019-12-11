@@ -1,0 +1,51 @@
+name:        validation
+version:     0.1.0
+synopsis:    Validation
+description: Validation
+maintainer:  Adjoint Inc (info@adjoint.io)
+license:     MIT
+github:      adjoint-io/validation
+category:    Web
+
+default-extensions:
+  - OverloadedStrings
+  - NoImplicitPrelude
+
+dependencies:
+  - base >= 4.10 && < 5
+  - protolude >= 0.2 && < 0.3
+  - aeson
+  - regex-tdfa
+  - regex-base
+  - text
+  - unordered-containers
+  - scientific
+
+extra-source-files:
+  - README.md
+  - ChangeLog.md
+
+ghc-options:
+  - -freverse-errors
+  - -O2
+  - -Wall
+
+library:
+  exposed-modules:
+    - Validation
+  source-dirs:
+    - src
+
+tests:
+  validation-tests:
+    main: Main
+    dependencies:
+      - validation
+      - QuickCheck
+      - quickcheck-instances
+      - tasty
+      - tasty-discover
+      - tasty-hunit
+      - tasty-quickcheck
+    source-dirs:
+      - test
