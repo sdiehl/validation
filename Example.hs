@@ -25,7 +25,7 @@ data Foo = Foo {x :: Int, y :: Int}
 validateFoo :: Foo -> Validation [InvalidFoo] Foo
 validateFoo (Foo a b) =
   Foo <$> validate (positive [NegativeX]) a
-    <*> validate (negative [PositiveY]) b
+      <*> validate (negative [PositiveY]) b
 
 checkFoo :: Foo -> Either [InvalidFoo] Foo
 checkFoo = toEither . validateFoo
@@ -63,10 +63,10 @@ data PasswordError
 
 passwordValidate :: Validator [PasswordError] Text
 passwordValidate =
-  textLength 1 8 [InvalidLength]
-    <> regex "[A-Z]" [ContainsUppercase]
-    <> regex "[a-z]" [ContainsLowercase]
-    <> regex "[0-9]" [ContainsNumber]
+     textLength 1 8 [InvalidLength]
+  <> regex "[A-Z]" [ContainsUppercase]
+  <> regex "[a-z]" [ContainsLowercase]
+  <> regex "[0-9]" [ContainsNumber]
 
 checkPassword :: Text -> Either [PasswordError] Text
 checkPassword = toEither . validate passwordValidate

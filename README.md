@@ -2,7 +2,7 @@
 
 Extensible validation for a large class of Haskell data structures that can be
 composed monoidally, applied applicatively over arbitary datatypes and collect
-in multiple failure modes in a single validation functor.
+multiple failure modes in a single validation functor.
 
 ```haskell
 data PasswordError
@@ -22,3 +22,5 @@ passwordValidate =
 checkPassword :: Text -> Either [PasswordError] Text
 checkPassword = toEither . validate passwordValidate
 ```
+
+See [Example.hs](./Example.hs).
