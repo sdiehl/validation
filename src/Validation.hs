@@ -62,7 +62,6 @@ instance Foldable (Validation e) where
   foldMap _ _ = mempty
 
 instance Semigroup err => Applicative (Validation err) where
-
   Failure e1 <*> Failure e2 = Failure (e1 <> e2)
   Failure e1 <*> _ = Failure e1
   _ <*> Failure e2 = Failure e2
