@@ -21,7 +21,6 @@ source-repository head
 library
   exposed-modules:    Validation
   hs-source-dirs:     src
-  other-modules:      Paths_validation
   default-language:   Haskell2010
   default-extensions:
     NoImplicitPrelude
@@ -42,7 +41,6 @@ test-suite validation-tests
   type:               exitcode-stdio-1.0
   main-is:            Main.hs
   hs-source-dirs:     test
-  other-modules:      Paths_validation
   default-language:   Haskell2010
   default-extensions:
     NoImplicitPrelude
@@ -50,18 +48,18 @@ test-suite validation-tests
 
   ghc-options:        -freverse-errors -O2 -Wall -main-is Main
   build-depends:
-      aeson                 >=1.5.2.0  && <1.6
+      aeson                 >=1.4.0.0  && <1.6
     , base                  >=4.10     && <5
     , protolude             >=0.2      && <0.4
-    , QuickCheck            >=2.14     && <2.15
-    , quickcheck-instances  >=0.3.23   && <0.4
+    , QuickCheck            >=2.13     && <2.15
+    , quickcheck-instances  >=0.3.22   && <0.4
     , regex-base            >=0.94.0.0 && <0.95
     , regex-tdfa            >=1.3.1.0  && <1.4
     , scientific            >=0.3.6.2  && <0.4
-    , tasty                 >=1.3.1    && <1.4
+    , tasty                 >=1.2.0    && <1.4
     , tasty-discover        >=4.2.1    && <4.3
-    , tasty-hunit           >=0.10.0.2 && <0.11
-    , tasty-quickcheck      >=0.10.1.1 && <0.11
-    , text                  >=1.2.3.2  && <1.3
-    , unordered-containers  >=0.2.11.0 && <0.3
+    , tasty-hunit           >=0.10.0.0 && <0.11
+    , tasty-quickcheck      >=0.10.0.0 && <0.11
+    , text                  >=1.2.0.0  && <1.3
+    , unordered-containers  >=0.2.0.0  && <0.3
     , validation
